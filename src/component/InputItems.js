@@ -38,20 +38,23 @@ function InputItems(props) {
     }
 
     return (
-        <div>
-            {inputElements}
-            {status &&
-            <form onChange={onUpdateInput}>
-                <label>What?</label>
-                <input className={notValid ? s.invalid : ''} name="what" value={props.messageTextWhat} type="text" required/>
-                <label>Why?</label>
-                <input className={notValid ? s.invalid : ''}  name='why' value={props.messageTextWhy} type="text" required/>
-            </form>
-            }
-            {!status
-                ? <button onClick={onStart}>START AGAIN</button>
-                : <button onClick={onHandleSubmit}>SUBMIT</button>
-            }
+        <div className={s.wrapper}>
+
+
+
+            {/*{inputElements}*/}
+            {/*{status &&*/}
+            {/*<form onChange={onUpdateInput}>*/}
+            {/*    <label>What?</label>*/}
+            {/*    <input className={notValid ? s.invalid : ''} name="what" value={props.messageTextWhat} type="text" required/>*/}
+            {/*    <label>Why?</label>*/}
+            {/*    <input className={notValid ? s.invalid : ''}  name='why' value={props.messageTextWhy} type="text" required/>*/}
+            {/*</form>*/}
+            {/*}*/}
+            {/*{!status*/}
+            {/*    ? <button onClick={onStart}>START AGAIN</button>*/}
+            {/*    : <button onClick={onHandleSubmit}>SUBMIT</button>*/}
+            {/*}*/}
         </div>
 
     );

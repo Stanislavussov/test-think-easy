@@ -1,10 +1,11 @@
-import InputItems from "./InputItems";
 import {connect} from "react-redux";
-import {allSendAC, whatUpdateAC, whyUpdateAC, startAC} from "./inputReducer";
+import {allSendAC, whatUpdateAC, whyUpdateAC, startAC, sendAC} from "./inputReducer";
+import Main from "../pages/main/Main";
 
 let mapStateToProps = (state) => {
 
     return {
+        getInputs: state.inputPage.inputs,
         questions: state.inputPage.questions,
         messageTextWhat: state.inputPage.newMessageTextWhat,
         messageTextWhy: state.inputPage.newMessageTextWhy
@@ -14,6 +15,9 @@ let mapStateToProps = (state) => {
 let mapDispatchToProps = (dispatch) => {
 
     return {
+        send: (e)=>{
+            dispatch(sendAC(e))
+        },
         sendAll: () => {
             dispatch(allSendAC())
         },
@@ -32,5 +36,5 @@ let mapDispatchToProps = (dispatch) => {
     };
 }
 
-const InputItemsContainer = connect(mapStateToProps, mapDispatchToProps)(InputItems);
+const InputItemsContainer = connect(mapStateToProps, mapDispatchToProps)(Main);
 export default InputItemsContainer;

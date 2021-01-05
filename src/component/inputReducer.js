@@ -2,10 +2,12 @@ const SEND_ALL = 'SEND_ALL';
 const UPDATE_WHAT = 'UPDATE_WHAT';
 const UPDATE_WHY = 'UPDATE_WHY';
 const START = 'START';
+const SEND = 'SEND'
 // const WHERE = 'WHERE';
 // const WHEN = 'WHEN';
 
 let initialState = {
+    inputs: {Who: '', What: '', When: '', Where: ''},
     questions: [],
     newMessageTextWhat: '',
     newMessageTextWhy: ''
@@ -13,6 +15,11 @@ let initialState = {
 
 const inputReducer = (state = initialState, action) => {
     switch (action.type){
+        case SEND:
+            return {
+                ...state,
+                inputs: {...state.inputs, [action.event.name]: action.event.value}
+            }
         case UPDATE_WHAT:
             return {
                 ...state,
@@ -41,6 +48,7 @@ export const allSendAC = () => ({type: SEND_ALL});
 export const whatUpdateAC = (text) => ({type: UPDATE_WHAT, text: text});
 export const whyUpdateAC = (text) => ({type: UPDATE_WHY, text: text});
 export const startAC = () => ({type: START})
+export const sendAC = (e) => ({type: SEND, event: e})
 // export const whereAC = (text) => ({type: WHERE, inputText: text});
 // export const whenAC = (text) => ({type: WHEN, inputText: text});
 

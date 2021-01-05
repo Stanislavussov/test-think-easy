@@ -1,0 +1,35 @@
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.main{
+    max-width: 90%;
+
+    padding: 15px;
+    border-radius: 3px;
+    box-shadow: 3px 6px 18px rgba(0,0,0,0.7);
+}
+.inputs{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.input{
+    margin: 0 20px;
+}
+
+.text{
+padding: 10px;
+
+}
+.typography{
+    word-wrap: break-word;
+    text-transform: uppercase;
+    font-weight: 400 !important;
+}
