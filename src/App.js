@@ -1,11 +1,10 @@
-import './App.css';
-import InputItemsContainer from "./component/InputItemsContainer";
+import '../../test-think-easy/src/App.css';
+import Container from "./pages/main/Container";
 
 function App() {
   return (
     <div>
-      {/*<h1>Hello</h1>*/}
-        <InputItemsContainer/>
+        <Container/>
     </div>
   );
 }
